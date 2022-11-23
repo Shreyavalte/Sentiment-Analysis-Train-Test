@@ -18,10 +18,11 @@ steps:
     architecture: 'x64'
 - script: pip3 freeze > requirements.txt
   displayName: 'pip install notebook reqs'
+
 - task: Bash@3
   inputs:
-    filePath: 'sdk/python/setup.sh'
-    arguments: 'set up sdk'
+    targetType: 'inline'
+    script: 'set up sdk'
 
 - task: AzureCLI@2
   inputs:
