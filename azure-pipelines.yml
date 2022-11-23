@@ -24,10 +24,11 @@ steps:
     targetType: 'inline'
     script: 'set up sdk'
 
+
 - task: AzureCLI@2
   inputs:
     azureSubscription: 'Project1SCN'
-    scriptType: 'pscore'
+    scriptType: 'bash'
     scriptLocation: 'inlineScript'
     inlineScript: |
            sed -i -e "s/<SUBSCRIPTION_ID>/$(SUBSCRIPTION_ID)/g" sklearn-diabetes.ipynb
