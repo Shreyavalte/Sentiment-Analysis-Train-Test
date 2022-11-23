@@ -28,12 +28,12 @@ steps:
 - task: AzureCLI@2
   inputs:
     azureSubscription: 'Project1SCN'
-    scriptType: 'bash'
+    scriptType: 'pscore'
     scriptLocation: 'inlineScript'
     inlineScript: |
-           sed -i -e "s/<SUBSCRIPTION_ID>/$(SUBSCRIPTION_ID)/g" sklearn-diabetes.ipynb
-           sed -i -e "s/<RESOURCE_GROUP>/$(RESOURCE_GROUP)/g" sklearn-diabetes.ipynb
-           sed -i -e "s/<AML_WORKSPACE_NAME>/$(AZUREML_WORKSPACE_NAME)/g" sklearn-diabetes.ipynb
-           sed -i -e "s/DefaultAzureCredential/AzureCliCredential/g" sklearn-diabetes.ipynb
-           papermill -k python sklearn-diabetes.ipynb sklearn-diabetes.output.ipynb
-    workingDirectory: 'sdk/python/jobs/single-step/scikit-learn/diabetes'
+      sed -i -e "s/<afdebeae-4fec-483a-bb31-a0bef27f4c72>/$(afdebeae-4fec-483a-bb31-a0bef27f4c72)/g" sklearn-diabetes.ipynb
+                 sed -i -e "s/<HANU-ROHIT-RG>/$(HANU-ROHIT-RG)/g" sklearn-diabetes.ipynb
+                 sed -i -e "s/<Dbricks-hanu>/$(Dbricks-hanu)/g" sklearn-diabetes.ipynb
+                 sed -i -e "s/DefaultAzureCredential/AzureCliCredential/g" sklearn-diabetes.ipynb
+                 papermill -k python sklearn-diabetes.ipynb sklearn-diabetes.output.ipynb
+          workingDirectory: 'sdk/python/jobs/single-step/scikit-learn/diabetes'
