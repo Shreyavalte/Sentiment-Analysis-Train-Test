@@ -16,7 +16,7 @@ steps:
     allowUnstable: true
     addToPath: true
     architecture: 'x64'
-- script: pip install -r sdk/python/dev-requirements.txt
+- script: pip install -r requirements.txt
   displayName: 'pip install notebook reqs'
 - task: Bash@3
   inputs:
